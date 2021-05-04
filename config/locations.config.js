@@ -1,4 +1,4 @@
 module.exports = {
   files: "../files",
-  client: "../client/dist",
+  client: "../client/dist/zoji-table",
 }
