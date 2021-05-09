@@ -27,10 +27,9 @@ router.get('/', (req, res, next) => {
   Model.find({}).sort(sort)
     .then(d => {
       const count = d.length;
-      const data = d.slice(skip, skip + limit)
-      
-      res.send(data)
-      // res.send({ data, count, skip, limit, sort, search })
+      const consumers = d.slice(skip, skip + limit);
+      const pagination = { count, skip, limit, sort, search }
+      res.send({ consumers, pagination })
     })
     .catch(e => sendError(res, e))
 });
