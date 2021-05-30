@@ -7,6 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users.routes');
 var consumersRouter = require('./routes/consumers.routes');
 var departmentsRouter = require('./routes/departments.routes');
+var regionsRouter = require('./routes/regions.routes');
 
 const locations = require('../config/locations.config');
 var cors = require('cors');
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/users', usersRouter);
 app.use('/api/consumers', consumersRouter);
 app.use('/api/departments', departmentsRouter);
+app.use('/api/regions', regionsRouter);
 
 // ---- SERVE STATIC FILES ---- //
 app.get('*.*', express.static(locations.client, {maxAge: '1y'}));

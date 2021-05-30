@@ -16,6 +16,8 @@ ng g c modules/users/components/user-card
 """""data"""""
 ng generate dt app-store/department/department
 
+ng g m modules/departments -m app
+ng g c modules/departments
 
 
 
