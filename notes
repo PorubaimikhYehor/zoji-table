@@ -1,0 +1,42 @@
+store
+ng g m app-store/app-store
+ng g store State --root -m app-store
+
+consumers (entity)
+ng g en app-store/consumer/consumer -m ../app-store -r ../index.ts -c --skip-tests --flat
+ng g ef app-store/consumer/consumer -m app-store -c --skip-tests -a --root
+
+user (entity)
+ng g en app-store/user/user -m ../app-store -r ../index.ts -c --skip-tests --flat
+ng g ef app-store/user/user -m app-store -c --skip-tests -a --root
+ng g s app-store/user/user --skip-tests
+
+ng g c modules/users/components/user-card
+
+"""""data"""""
+ng generate dt app-store/department/department
+
+
+
+
+generate Feature
+ng g f app-store/interface/consumers -m ../app-store -r ../index.ts -c
+ng g f app-store/data-entry/DataEntry -m app-store -r ../index.ts -c //should delete selectors files
+ng g f app-store/configuration/configuration -m app-store -r ../index.ts -c //should delete selectors files
+
+
+generate Entity:
+ng g en app-store/plant/Plant -m ../app-store -r ../index.ts -c
+ng g en app-store/department/Department -m ../app-store -r ../index.ts -c
+ng g en app-store/shift/Shift -m ../app-store -r ../index.ts -c
+ng g en app-store/schedule/Schedule -m ../app-store -r ../index.ts -c
+ng g en app-store/template/Template -m ../app-store -r ../index.ts -c
+ng g en app-store/user/user -m ../app-store -r ../index.ts -c
+
+generate Effects:
+ng generate effect app-store/plant/Plant -m app-store --root -c -a
+ng generate effect app-store/department/Department -m app-store --root -c -a
+ng generate effect app-store/shift/Shift -m app-store --root -c -a
+ng generate effect app-store/schedule/Schedule -m app-store --root -c -a
+ng generate effect app-store/template/Template -m app-store --root -c -a
+ng generate effect app-store/user/user -m app-store --root -c -a

@@ -4,8 +4,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users.routes');
 var consumersRouter = require('./routes/consumers.routes');
+var departmentsRouter = require('./routes/departments.routes');
 
 const locations = require('../config/locations.config');
 var cors = require('cors');
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/consumers', consumersRouter);
+app.use('/api/departments', departmentsRouter);
 
 // ---- SERVE STATIC FILES ---- //
 app.get('*.*', express.static(locations.client, {maxAge: '1y'}));
